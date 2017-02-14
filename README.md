@@ -11,7 +11,7 @@ Measurements were taken on 7 different indoor locations:
 * Bedroom
 * Boiler room.
 
-42000 samples were taken: 21000 for LOS and 21000 for NLOS channel condition.
+In every indoor location 3000 LOS samples and 3000 NLOS samples were taken. Different locations were choosen to prevent building of location-specific LOS and NLOS models. All together 42000 samples were taken: 21000 for LOS and 21000 for NLOS channel condition. To make data set ready for building LOS and NLOS models, samples are randomized to prevent overfitting of a model to particular places. 
 For measurements two UWB nodes were used: one node as an anchor and the second node as a tag. Only traces of LOS and NLOS channel measurements were taken without any reference positioning (this data set is not appropriate for localization evaluation).
 
 ## Data Set Structure
@@ -55,7 +55,7 @@ To import data set data into Python environment, **uwb_dataset.py** script from 
 	import uwb_dataset
 	
 	# import raw data
-	data = import_from_files()
+	data = uwb_dataset.import_from_files()
 	
 	# divide CIR by RX preable count (get CIR of single preamble pulse)
 	# item[2] represents number of acquired preamble symbols
@@ -64,4 +64,15 @@ To import data set data into Python environment, **uwb_dataset.py** script from 
 	
 	print(data)
 
-		
+## Citation
+If you are using our data set in your research, citation of the following paper would be greatly appreciated.
+
+[Klemen Bregar, Andrej Hrovat, Mihael Mohorčič, “NLOS Channel Detection with Multilayer Perceptron in Low-Rate Personal Area Networks for Indoor Localization Accuracy Improvement”. Proceedings of the 8th Jožef Stefan International Postgraduate School Students’ Conference, Ljubljana, Slovenia, May 31-June 1, 2016.](https://www.researchgate.net/publication/308986067_NLOS_Channel_Detection_with_Multilayer_Perceptron_in_Low-Rate_Personal_Area_Networks_for_Indoor_Localization_Accuracy_Improvement)
+
+## Author and license
+Author of UWB LOS and NLOS Data Set and corresponding Python scripts is Klemen Bregar, **klemen.bregar@ijs.si**. 
+
+Copyright (C) 2017 SensorLab, Jožef Stefan Institute http://sensorlab.ijs.si
+
+## Acknowledgement
+The research leading to these results has received funding from the European Horizon 2020 Programme project eWINE under grant agreement No. 688116.
